@@ -784,7 +784,6 @@ parentViewController:(UIViewController*)parentViewController
 
     [super viewDidAppear:animated];
 }
-
 //--------------------------------------------------------------------------
 - (void)startCapturing {
     self.processor.capturing = YES;
@@ -956,19 +955,14 @@ parentViewController:(UIViewController*)parentViewController
         CGContextStrokePath(context);
     }
 
-    // if (self.processor.is2D) {
-    //     UIColor* color = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:RETICLE_ALPHA];
-    //     CGContextSetStrokeColorWithColor(context, color.CGColor);
-    //     CGContextSetLineWidth(context, RETICLE_WIDTH);
-    //     CGContextStrokeRect(context,
-    //                         CGRectMake(
-    //                                    RETICLE_OFFSET,
-    //                                    RETICLE_OFFSET,
-    //                                    RETICLE_SIZE-2*RETICLE_OFFSET,
-    //                                    RETICLE_SIZE-2*RETICLE_OFFSET
-    //                                    )
-    //                         );
-    // }
+    UILabel *label;
+    
+    label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    [label setText:@"Posicione a linha vermelha sobre código de barras."];
+    [label setTextColor:[UIColor whiteColor]];
+    [label setTextAlignment:NSTextAlignmentCenter];
+    [label setAdjustsFontSizeToFitWidth:YES];
+    [self.view addSubview:label];
 
     result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -984,12 +978,12 @@ parentViewController:(UIViewController*)parentViewController
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {
-    return [[UIApplication sharedApplication] statusBarOrientation];
+    return UIInterfaceOrientationLandscapeLeft;
 }
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    return UIInterfaceOrientationMaskAll;
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
