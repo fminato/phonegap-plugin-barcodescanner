@@ -956,19 +956,19 @@ parentViewController:(UIViewController*)parentViewController
         CGContextStrokePath(context);
     }
 
-    if (self.processor.is2D) {
-        UIColor* color = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:RETICLE_ALPHA];
-        CGContextSetStrokeColorWithColor(context, color.CGColor);
-        CGContextSetLineWidth(context, RETICLE_WIDTH);
-        CGContextStrokeRect(context,
-                            CGRectMake(
-                                       RETICLE_OFFSET,
-                                       RETICLE_OFFSET,
-                                       RETICLE_SIZE-2*RETICLE_OFFSET,
-                                       RETICLE_SIZE-2*RETICLE_OFFSET
-                                       )
-                            );
-    }
+    // if (self.processor.is2D) {
+    //     UIColor* color = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:RETICLE_ALPHA];
+    //     CGContextSetStrokeColorWithColor(context, color.CGColor);
+    //     CGContextSetLineWidth(context, RETICLE_WIDTH);
+    //     CGContextStrokeRect(context,
+    //                         CGRectMake(
+    //                                    RETICLE_OFFSET,
+    //                                    RETICLE_OFFSET,
+    //                                    RETICLE_SIZE-2*RETICLE_OFFSET,
+    //                                    RETICLE_SIZE-2*RETICLE_OFFSET
+    //                                    )
+    //                         );
+    // }
 
     result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
