@@ -958,7 +958,7 @@ parentViewController:(UIViewController*)parentViewController
     UILabel *label;
     
     label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-    [label setText:@"Posicione a linha vermelha sobre código de barras."];
+    [label setText:@"Posicione a linha vermelha sobre o código de barras"];
     [label setTextColor:[UIColor whiteColor]];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setAdjustsFontSizeToFitWidth:YES];
